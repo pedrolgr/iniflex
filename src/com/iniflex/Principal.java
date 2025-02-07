@@ -5,6 +5,8 @@ import com.iniflex.model.Funcionario;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
+import static com.iniflex.model.utils.Utils.removerFuncionario;
+
 public class Principal {
     public static void main(String[] args) {
         ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
@@ -20,6 +22,7 @@ public class Principal {
         funcionarios.add(new Funcionario("Heloísa", "24/05/2003", new BigDecimal("1606.85"), "Eletricista"));
         funcionarios.add(new Funcionario("Helena", "02/09/1996", new BigDecimal("2799.93"), "Gerente"));
 
-        System.out.print(funcionarios);
+        removerFuncionario(funcionarios,"João");
+
     }
 }
