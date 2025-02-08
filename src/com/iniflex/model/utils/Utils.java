@@ -4,6 +4,8 @@ import com.iniflex.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,4 +34,17 @@ public class Utils {
         System.out.println(funcionarioAniversariante);
     }
 
+    public static void imprimirFuncionarioMaisVelho(List<Funcionario> funcionarios) {
+        Funcionario funcionarioMaisVelho = null;
+        int maiorIdade = 0;
+        for(Funcionario funcionario: funcionarios) {
+            Period idadeFuncionario = Period.between(funcionario.getDataNascimento(), LocalDate.now());
+            if(idadeFuncionario.getYears() > maiorIdade) {
+                maiorIdade = idadeFuncionario.getYears();
+                funcionarioMaisVelho = funcionario;
+            }
+        }
+        System.out.println("*** FUNCIONÁRIO MAIS VELHO ***\n" +
+                "Nome: " + funcionarioMaisVelho.getNome() + " | Idade: " +maiorIdade);
+    }
 }

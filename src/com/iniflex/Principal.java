@@ -3,10 +3,7 @@ package com.iniflex;
 import com.iniflex.model.Funcionario;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.iniflex.model.utils.Utils.*;
@@ -49,6 +46,10 @@ public class Principal {
 
         // Questão 3.8
         imprimirFuncionarioMesAniversario(funcionarios, 10);
-        
+
+        // Questao 3.9
+        imprimirFuncionarioMaisVelho(funcionarios);
+
+        // Questao 3.10
     }
 }

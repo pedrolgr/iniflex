@@ -7,6 +7,7 @@ public class Pessoa {
     private String nome;
     private LocalDate dataNascimento;
 
+
     private static final DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public Pessoa(String nome, String dataNascimento) {
