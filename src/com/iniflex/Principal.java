@@ -39,7 +39,9 @@ public class Principal {
         Map<String, List<Funcionario>> funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
                 funcionario -> funcionario.getFuncao()));
 
-        // Questão 3.6 FAZER DEPOIS
+        // Questão 3.6
+        funcionariosMap.forEach((funcao, lista) ->
+                System.out.println("\n" + funcao +": " + lista));
 
         // Questão 3.8
         imprimirFuncionarioMesAniversario(funcionarios, 10);
