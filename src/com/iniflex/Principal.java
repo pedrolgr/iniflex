@@ -5,12 +5,14 @@ import com.iniflex.model.Funcionario;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import static com.iniflex.model.utils.Utils.removerFuncionario;
+import static com.iniflex.model.utils.Utils.*;
 
+// Questão 3
 public class Principal {
     public static void main(String[] args) {
         ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
+        // Questão 3.1
         funcionarios.add(new Funcionario("Maria", "18/10/2000", new BigDecimal("2009.44"), "Operador"));
         funcionarios.add(new Funcionario("João", "12/05/1990", new BigDecimal("2284.38"), "Operador"));
         funcionarios.add(new Funcionario("Caio", "02/05/1961", new BigDecimal("9836.14"), "Coordenador"));
@@ -22,7 +24,14 @@ public class Principal {
         funcionarios.add(new Funcionario("Heloísa", "24/05/2003", new BigDecimal("1606.85"), "Eletricista"));
         funcionarios.add(new Funcionario("Helena", "02/09/1996", new BigDecimal("2799.93"), "Gerente"));
 
+        // Questão 3.2
         removerFuncionario(funcionarios,"João");
+
+        // Questão 3.3
+        System.out.println(funcionarios);
+
+        // Questão 3.4
+        atualizarTodosSalarios(new BigDecimal("0.10"), funcionarios);
 
     }
 }
