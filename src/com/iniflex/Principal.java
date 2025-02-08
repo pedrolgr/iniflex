@@ -47,14 +47,17 @@ public class Principal {
         // Questão 3.8
         imprimirFuncionarioMesAniversario(funcionarios, 10);
 
-        // Questao 3.9
+        // Questão 3.9
         imprimirFuncionarioMaisVelho(funcionarios);
 
-        // Questao 3.10
+        // Questão 3.10
         Collections.sort(funcionarios, Comparator.comparing(funcionario -> funcionario.getNome()));
 
-        // Questao 3.11
+        // Questão 3.11
         imprimirTotalSalario(funcionarios);
+
+        // Questão 3.12
+        imprimirQtdSalariosMinimosPorFuncionario(funcionarios);
 
     }
 }

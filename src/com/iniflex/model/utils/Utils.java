@@ -53,7 +53,17 @@ public class Utils {
         for(Funcionario funcionario: funcionarios) {
             salarioTotal = salarioTotal.add(funcionario.getSalario());
         }
-        System.out.println("*** SOMA DOS SALARIOS ***\n" +
+        System.out.println("*** SOMA DOS SALÁRIOS ***\n" +
                 "R$" + salarioTotal);
+    }
+
+    public static void imprimirQtdSalariosMinimosPorFuncionario(List<Funcionario> funcionarios) {
+        BigDecimal qtdSalarioMinimo = new BigDecimal(0);
+        BigDecimal salarioMinimo = new BigDecimal(1212.00);
+        System.out.println("*** QUANTIDADE DE SALÁRIOS MINIMOS POR FUNCIONÁRIO");
+        for(Funcionario funcionario: funcionarios) {
+            qtdSalarioMinimo = funcionario.getSalario().divide(salarioMinimo, 2);
+            System.out.println(funcionario.getNome() + " recebe " + qtdSalarioMinimo + " salários mínimos.");
+        }
     }
 }
