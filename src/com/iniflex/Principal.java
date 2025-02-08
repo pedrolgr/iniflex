@@ -28,7 +28,7 @@ public class Principal {
         // Questão 3.2
         removerFuncionario(funcionarios,"João");
 
-        // Questão 3.3
+        // Questão 3.3 ARRUMAR A PONTUACAO E A VIRGULA TBM
         System.out.println(funcionarios);
 
         // Questão 3.4
@@ -51,5 +51,10 @@ public class Principal {
         imprimirFuncionarioMaisVelho(funcionarios);
 
         // Questao 3.10
+        Collections.sort(funcionarios, Comparator.comparing(funcionario -> funcionario.getNome()));
+
+        // Questao 3.11
+        imprimirTotalSalario(funcionarios);
+
     }
 }

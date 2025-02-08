@@ -47,4 +47,13 @@ public class Utils {
         System.out.println("*** FUNCIONÁRIO MAIS VELHO ***\n" +
                 "Nome: " + funcionarioMaisVelho.getNome() + " | Idade: " +maiorIdade);
     }
+
+    public static void imprimirTotalSalario(List<Funcionario> funcionarios) {
+        BigDecimal salarioTotal = new BigDecimal(0);
+        for(Funcionario funcionario: funcionarios) {
+            salarioTotal = salarioTotal.add(funcionario.getSalario());
+        }
+        System.out.println("*** SOMA DOS SALARIOS ***\n" +
+                "R$" + salarioTotal);
+    }
 }
