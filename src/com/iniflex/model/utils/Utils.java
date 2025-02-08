@@ -4,7 +4,10 @@ import com.iniflex.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Utils {
 
@@ -18,4 +21,5 @@ public class Utils {
             funcionario.setSalario(novoSalario.setScale(2, RoundingMode.HALF_EVEN));
         }
     };
+
 }

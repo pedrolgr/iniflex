@@ -4,13 +4,17 @@ import com.iniflex.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static com.iniflex.model.utils.Utils.*;
 
 // Questão 3
 public class Principal {
     public static void main(String[] args) {
-        ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+        List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
         // Questão 3.1
         funcionarios.add(new Funcionario("Maria", "18/10/2000", new BigDecimal("2009.44"), "Operador"));
@@ -32,6 +36,16 @@ public class Principal {
 
         // Questão 3.4
         atualizarTodosSalarios(new BigDecimal("0.10"), funcionarios);
+
+        // Questão 3.5
+        Map<String, List<Funcionario>> funcionariosMap = new HashMap<String, List<Funcionario>>();
+
+        funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
+                funcionario -> funcionario.getFuncao()));
+        
+        System.out.println(funcionariosMap);
+
+
 
     }
 }
