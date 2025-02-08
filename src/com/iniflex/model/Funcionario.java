@@ -31,13 +31,13 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
-        return "{" +
+        return "{ Nome: " +
                 getNome() +
-                ", " +
+                ", Data de Nascimento: " +
                 getDataNascimento() +
-                ", " +
+                ", Salário: " +
                 salario +
-                ", " +
+                ", Função: " +
                 funcao +
                 "}";
     }
