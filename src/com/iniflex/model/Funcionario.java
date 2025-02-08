@@ -3,6 +3,7 @@ package com.iniflex.model;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Funcionario extends Pessoa {
     protected BigDecimal salario;
@@ -39,10 +40,11 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return "{ Nome: " +
                 getNome() +
                 ", Data de Nascimento: " +
-                getDataNascimentoString() +
+                getDataNascimento().format(formatador) +
                 ", Salário: R$" +
                 getSalarioFormatado() +
                 ", Função: " +

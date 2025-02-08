@@ -29,21 +29,21 @@ public class Principal {
         removerFuncionario(funcionarios,"João");
 
         // Questão 3.3
-        System.out.println(funcionarios);
+        System.out.println("*** TODOS OS FUNCIONARIOS ***");
+        funcionarios.forEach(System.out::println);
 
         // Questão 3.4
         atualizarTodosSalarios(new BigDecimal("0.10"), funcionarios);
 
         // Questão 3.5
-        Map<String, List<Funcionario>> funcionariosMap = new HashMap<String, List<Funcionario>>();
-
-        funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
+        Map<String, List<Funcionario>> funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
                 funcionario -> funcionario.getFuncao()));
 
         // Questão 3.6 FAZER DEPOIS
 
         // Questão 3.8
         imprimirFuncionarioMesAniversario(funcionarios, 10);
+        imprimirFuncionarioMesAniversario(funcionarios, 12);
 
         // Questão 3.9
         imprimirFuncionarioMaisVelho(funcionarios);

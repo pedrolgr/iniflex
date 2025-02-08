@@ -31,7 +31,8 @@ public class Utils {
                 funcionarioAniversariante.add(funcionario);
             }
         }
-        System.out.println(funcionarioAniversariante);
+        System.out.println("\n*** FUNCIONÁRIOS NASCIDOS NO MÊS " + mesAniversario + " ***");
+        funcionarioAniversariante.forEach(System.out::println);
     }
 
     public static void imprimirFuncionarioMaisVelho(List<Funcionario> funcionarios) {
@@ -44,7 +45,7 @@ public class Utils {
                 funcionarioMaisVelho = funcionario;
             }
         }
-        System.out.println("*** FUNCIONÁRIO MAIS VELHO ***\n" +
+        System.out.println("\n*** FUNCIONÁRIO MAIS VELHO ***\n" +
                 "Nome: " + funcionarioMaisVelho.getNome() + " | Idade: " +maiorIdade + "\n");
 
     }
