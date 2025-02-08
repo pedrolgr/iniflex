@@ -42,10 +42,13 @@ public class Principal {
 
         funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
                 funcionario -> funcionario.getFuncao()));
-        
+
         System.out.println(funcionariosMap);
 
+        // Questão 3.6 FAZER DEPOIS
 
-
+        // Questão 3.8
+        imprimirFuncionarioMesAniversario(funcionarios, 10);
+        
     }
 }

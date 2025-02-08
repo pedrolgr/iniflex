@@ -22,7 +22,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public String getDataNascimentoString() {
         return dataNascimento.format(formatador);
     }
 

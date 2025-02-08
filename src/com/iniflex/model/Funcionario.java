@@ -34,7 +34,7 @@ public class Funcionario extends Pessoa {
         return "{ Nome: " +
                 getNome() +
                 ", Data de Nascimento: " +
-                getDataNascimento() +
+                getDataNascimentoString() +
                 ", Salário: " +
                 salario +
                 ", Função: " +

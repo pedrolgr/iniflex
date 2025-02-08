@@ -22,4 +22,14 @@ public class Utils {
         }
     };
 
+    public static void imprimirFuncionarioMesAniversario(List<Funcionario> funcionarios, int mesAniversario) {
+        List<Funcionario> funcionarioAniversariante = new ArrayList<Funcionario>();
+        for(Funcionario funcionario: funcionarios) {
+            if(funcionario.getDataNascimento().getMonth().getValue() == mesAniversario) {
+                funcionarioAniversariante.add(funcionario);
+            }
+        }
+        System.out.println(funcionarioAniversariante);
+    }
+
 }
