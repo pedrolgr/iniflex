@@ -45,7 +45,8 @@ public class Utils {
             }
         }
         System.out.println("*** FUNCIONÁRIO MAIS VELHO ***\n" +
-                "Nome: " + funcionarioMaisVelho.getNome() + " | Idade: " +maiorIdade);
+                "Nome: " + funcionarioMaisVelho.getNome() + " | Idade: " +maiorIdade + "\n");
+
     }
 
     public static void imprimirTotalSalario(List<Funcionario> funcionarios) {
@@ -54,16 +55,17 @@ public class Utils {
             salarioTotal = salarioTotal.add(funcionario.getSalario());
         }
         System.out.println("*** SOMA DOS SALÁRIOS ***\n" +
-                "R$" + salarioTotal);
+                "R$" + salarioTotal + "\n");
     }
 
     public static void imprimirQtdSalariosMinimosPorFuncionario(List<Funcionario> funcionarios) {
         BigDecimal qtdSalarioMinimo = new BigDecimal(0);
         BigDecimal salarioMinimo = new BigDecimal(1212.00);
-        System.out.println("*** QUANTIDADE DE SALÁRIOS MINIMOS POR FUNCIONÁRIO");
+        System.out.println("*** QUANTIDADE DE SALÁRIOS MINIMOS POR FUNCIONÁRIO ***");
         for(Funcionario funcionario: funcionarios) {
             qtdSalarioMinimo = funcionario.getSalario().divide(salarioMinimo, 2);
             System.out.println(funcionario.getNome() + " recebe " + qtdSalarioMinimo + " salários mínimos.");
         }
+        System.out.println("\n\n");
     }
 }

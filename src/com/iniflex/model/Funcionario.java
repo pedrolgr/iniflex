@@ -1,11 +1,15 @@
 package com.iniflex.model;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 public class Funcionario extends Pessoa {
     protected BigDecimal salario;
     protected String funcao;
+
+    protected static String Formato = "R$#.##0,00";
+    protected static final DecimalFormat df = new DecimalFormat();
 
     public Funcionario(String nome, String dataNascimento, BigDecimal salario, String funcao) {
         super(nome, dataNascimento);
@@ -15,6 +19,10 @@ public class Funcionario extends Pessoa {
 
     public BigDecimal getSalario() {
         return salario;
+    }
+
+    public String getSalarioFormatado() {
+        return df.format(salario);
     }
 
     public void setSalario(BigDecimal salario) {
@@ -35,8 +43,8 @@ public class Funcionario extends Pessoa {
                 getNome() +
                 ", Data de Nascimento: " +
                 getDataNascimentoString() +
-                ", Salário: " +
-                salario +
+                ", Salário: R$" +
+                getSalarioFormatado() +
                 ", Função: " +
                 funcao +
                 "}";

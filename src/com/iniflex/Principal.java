@@ -28,7 +28,7 @@ public class Principal {
         // Questão 3.2
         removerFuncionario(funcionarios,"João");
 
-        // Questão 3.3 ARRUMAR A PONTUACAO E A VIRGULA TBM
+        // Questão 3.3
         System.out.println(funcionarios);
 
         // Questão 3.4
@@ -39,8 +39,6 @@ public class Principal {
 
         funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
                 funcionario -> funcionario.getFuncao()));
-
-        System.out.println(funcionariosMap);
 
         // Questão 3.6 FAZER DEPOIS
 
