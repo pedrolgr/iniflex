@@ -6,14 +6,12 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.iniflex.model.utils.Utils.*;
+import static com.iniflex.utils.Utils.*;
 
-// Questão 3
 public class Principal {
     public static void main(String[] args) {
         List<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-        // Questão 3.1
         funcionarios.add(new Funcionario("Maria", "18/10/2000", new BigDecimal("2009.44"), "Operador"));
         funcionarios.add(new Funcionario("João", "12/05/1990", new BigDecimal("2284.38"), "Operador"));
         funcionarios.add(new Funcionario("Caio", "02/05/1961", new BigDecimal("9836.14"), "Coordenador"));
@@ -25,38 +23,33 @@ public class Principal {
         funcionarios.add(new Funcionario("Heloísa", "24/05/2003", new BigDecimal("1606.85"), "Eletricista"));
         funcionarios.add(new Funcionario("Helena", "02/09/1996", new BigDecimal("2799.93"), "Gerente"));
 
-        // Questão 3.2
         removerFuncionario(funcionarios,"João");
 
-        // Questão 3.3
         System.out.println("*** TODOS OS FUNCIONARIOS ***");
         funcionarios.forEach(System.out::println);
+        System.out.println();
 
-        // Questão 3.4
         atualizarTodosSalarios(new BigDecimal("0.10"), funcionarios);
 
-        // Questão 3.5
         Map<String, List<Funcionario>> funcionariosMap = funcionarios.stream().collect(Collectors.groupingBy(
                 funcionario -> funcionario.getFuncao()));
 
-        // Questão 3.6
+        System.out.println("*** FUNCIONARIOS AGRUPADOS POR FUNÇÃO ***");
         funcionariosMap.forEach((funcao, lista) ->
-                System.out.println("\n" + funcao +": " + lista));
+                System.out.println(funcao +": " + lista));
 
-        // Questão 3.8
         imprimirFuncionarioMesAniversario(funcionarios, 10);
         imprimirFuncionarioMesAniversario(funcionarios, 12);
 
-        // Questão 3.9
         imprimirFuncionarioMaisVelho(funcionarios);
 
-        // Questão 3.10
         Collections.sort(funcionarios, Comparator.comparing(funcionario -> funcionario.getNome()));
+        System.out.println("*** FUNCIONARIOS EM ORDEM ALFABETICA ***");
+        funcionarios.stream().map(funcionario -> funcionario.getNome()).forEach(System.out::println);
+        System.out.println();
 
-        // Questão 3.11
         imprimirTotalSalario(funcionarios);
 
-        // Questão 3.12
         imprimirQtdSalariosMinimosPorFuncionario(funcionarios);
 
     }
